@@ -22,7 +22,7 @@ public class CouponService {
     }
 
     public Coupon getCouponById(Long id){
-        return couponRepository.findById(id).orElseThrow(()->new RuntimeException("Coupon with id " +id+ "not found"));
+        return couponRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Coupon with id " +id+ "not found"));
     }
 
     public Coupon createCoupon(CouponRequest coupon) throws Exception {
